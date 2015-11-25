@@ -1,7 +1,6 @@
 package org.darcstarsolutions.commons.finance.brokerservices.config
-
 import org.darcstarsolutions.commons.finance.brokerservices.BrokerServicesFactory
-import org.darcstarsolutions.commons.finance.brokerservices.etrade.EtradeBrokerServiceFactoryBean
+import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceConfiguration
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,7 +13,6 @@ import static org.hamcrest.MatcherAssert.assertThat
 import static org.hamcrest.Matchers.instanceOf
 import static org.hamcrest.core.Is.is
 import static org.hamcrest.core.IsNot.not
-
 /**
  * Created by mharris on 11/24/15.
  */
@@ -30,7 +28,7 @@ class BrokerServicesConfigurationTest {
     private BrokerServicesFactory brokerServicesFactory
 
     @Autowired
-    private EtradeBrokerServiceFactoryBean etradeBrokerServiceFactoryBean
+    private EtradeBrokerServiceConfiguration etradeBrokerServiceConfiguration
 
     @Test
     public void testConfigurationExistence() throws Exception {
@@ -46,7 +44,7 @@ class BrokerServicesConfigurationTest {
 
     @Test
     public void testEtradeBrokerServiceFactoryBeanExistence() throws Exception {
-        assertThat(etradeBrokerServiceFactoryBean, is(not(null)))
-        assertThat(etradeBrokerServiceFactoryBean, instanceOf(EtradeBrokerServiceFactoryBean.class))
+        assertThat(etradeBrokerServiceConfiguration, is(not(null)))
+        assertThat(etradeBrokerServiceConfiguration, instanceOf(EtradeBrokerServiceConfiguration.class))
     }
 }
