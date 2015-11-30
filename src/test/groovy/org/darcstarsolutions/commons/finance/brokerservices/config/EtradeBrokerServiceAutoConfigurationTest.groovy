@@ -1,6 +1,6 @@
 package org.darcstarsolutions.commons.finance.brokerservices.config
 
-import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceConfiguration
+import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceAutoConfiguration
 import org.darcstarsolutions.commons.finance.brokerservices.etrade.EtradeAuthorizationService
 import org.darcstarsolutions.commons.finance.brokerservices.etrade.EtradeBrokerService
 import org.junit.Test
@@ -19,11 +19,11 @@ import static org.hamcrest.core.IsNot.not
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = [EtradeBrokerServiceConfiguration.class])
-class EtradeBrokerServiceConfigurationTest {
+@ContextConfiguration(classes = [EtradeBrokerServiceAutoConfiguration.class])
+class EtradeBrokerServiceAutoConfigurationTest {
 
     @Autowired
-    private EtradeBrokerServiceConfiguration etradeBrokerServiceConfiguration
+    private EtradeBrokerServiceAutoConfiguration etradeBrokerServiceConfiguration
 
     @Autowired
     private EtradeBrokerService etradeBrokerService
@@ -34,7 +34,7 @@ class EtradeBrokerServiceConfigurationTest {
     @Test
     public void testConfigurationExistence() throws Exception {
         assertThat(etradeBrokerServiceConfiguration, is(not(null)))
-        assertThat(etradeBrokerServiceConfiguration, instanceOf(EtradeBrokerServiceConfiguration.class))
+        assertThat(etradeBrokerServiceConfiguration, instanceOf(EtradeBrokerServiceAutoConfiguration.class))
     }
 
     @Test

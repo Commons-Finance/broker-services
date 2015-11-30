@@ -2,6 +2,7 @@ package org.darcstarsolutions.commons.finance.brokerservices.config.etrade
 
 import org.darcstarsolutions.commons.finance.brokerservices.etrade.EtradeAuthorizationService
 import org.darcstarsolutions.commons.finance.brokerservices.etrade.EtradeBrokerService
+import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.DependsOn
@@ -12,7 +13,8 @@ import org.springframework.context.annotation.Scope
  */
 
 @Configuration
-class EtradeBrokerServiceConfiguration {
+@EnableConfigurationProperties(EtradeProperties.class)
+class EtradeBrokerServiceAutoConfiguration {
 
     @Bean
     @Scope(value = "prototype")

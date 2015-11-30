@@ -1,6 +1,6 @@
 package org.darcstarsolutions.commons.finance.brokerservices.etrade
 
-import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceConfiguration
+import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceAutoConfiguration
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -17,7 +17,7 @@ import static org.hamcrest.core.IsNot.not
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = [EtradeBrokerServiceConfiguration.class])
+@ContextConfiguration(classes = [EtradeBrokerServiceAutoConfiguration.class])
 class EtradeBrokerServiceTest {
 
     @Autowired

@@ -1,6 +1,6 @@
 package org.darcstarsolutions.commons.finance.brokerservices.config
 import org.darcstarsolutions.commons.finance.brokerservices.BrokerServicesFactory
-import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceConfiguration
+import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceAutoConfiguration
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -28,7 +28,7 @@ class BrokerServicesConfigurationTest {
     private BrokerServicesFactory brokerServicesFactory
 
     @Autowired
-    private EtradeBrokerServiceConfiguration etradeBrokerServiceConfiguration
+    private EtradeBrokerServiceAutoConfiguration etradeBrokerServiceConfiguration
 
     @Test
     public void testConfigurationExistence() throws Exception {
@@ -45,6 +45,6 @@ class BrokerServicesConfigurationTest {
     @Test
     public void testEtradeBrokerServiceFactoryBeanExistence() throws Exception {
         assertThat(etradeBrokerServiceConfiguration, is(not(null)))
-        assertThat(etradeBrokerServiceConfiguration, instanceOf(EtradeBrokerServiceConfiguration.class))
+        assertThat(etradeBrokerServiceConfiguration, instanceOf(EtradeBrokerServiceAutoConfiguration.class))
     }
 }

@@ -1,6 +1,6 @@
 package org.darcstarsolutions.commons.finance.brokerservices.config
 import org.darcstarsolutions.commons.finance.brokerservices.BrokerServicesFactory
-import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceConfiguration
+import org.darcstarsolutions.commons.finance.brokerservices.config.etrade.EtradeBrokerServiceAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import
  */
 
 @Configuration
-@Import(value = [EtradeBrokerServiceConfiguration])
+@Import(value = [EtradeBrokerServiceAutoConfiguration])
 class BrokerServicesConfiguration {
 
     @Bean(name = "brokerServicesFactory")
